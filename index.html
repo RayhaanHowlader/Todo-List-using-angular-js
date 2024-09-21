@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myNinjaApp">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.3/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-animate/1.8.3/angular-animate.min.js"></script>
+    <script src="index.js"></script>
+    <style>
+
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .hello{
+            display:flex;
+            width:100vw;
+            height:50px;
+            list-style-type:none;
+            background-color: black;
+            justify-content: flex-end;
+            align-items: center;
+            border-radius:3px;
+            /* margin:10px 0; */
+            box-sizing: border-box;
+        }
+        .head{
+            color:white;
+            position: absolute;
+           left: 25px;
+           
+          
+        }
+        a{
+            color:white;
+            text-decoration: none;
+            padding: 10px;
+            font-size:25px;
+     
+        }
+        a:hover{
+            color:red;
+            text-decoration: underline;
+        }
+        div input{
+            border:2px solid black;
+            border-radius: 20px;
+            width:300px;
+            margin:10px;
+            font-size:20px;
+            padding:10px;
+        }
+        .ninjas{
+            border:2px solid black;
+            margin:20px;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+        .ninjas li{
+            padding: 10px;
+            font-size:20px;
+            list-style-type:none;
+        }
+        .dir{
+            position:relative;
+            right: 5px;
+        }
+        div{
+            width:100vw;
+            box-sizing: border-box;
+            display: inline-flex;
+            flex-direction: column;
+        }
+        .input{
+            display:flex;
+            flex-direction: row;
+            flex-wrap:wrap;
+            align-items:center;
+        }
+       .order{
+            border-radius:20px;
+            height:40px;
+            width:120px;
+            font: size 1.5rem;
+            background-color:black;
+            color:white;
+            cursor:pointer;
+            margin:15px;
+  
+        }
+       .order:hover{
+            color:red;
+            text-decoration: underline;
+        }
+        .ninjas li{
+            display:flex;
+            flex-wrap:wrap;
+        }
+        .ninjas li span {
+            text-align: center;
+            width:100px;
+            color:white;
+            padding:2px 10px;
+            float:right;
+       
+            border-radius:10px;
+        }
+        .remove{
+            float:right;
+            width:25px;
+            color:red;
+            font-size:20px;
+            background-color: black;
+            margin:0 10px;
+        }
+        .img{
+            height: 20px;
+            width: 20px;
+            border:1px solid black;
+            margin:-4px 0px;
+            border-radius:20px;
+            
+        }
+        form{
+            display:flex;
+            flex-direction: row;
+            flex-wrap:wrap;
+        }
+        main.ng-enter{
+            transition:0.5s linear all;
+            opacity: 0;
+        }
+        main.ng-enter.ng-enter-active{
+            opacity:1;
+        }
+        #ninjas li.ng-enter{
+
+            transition: 0.2s linear;
+            transform:translateY(30px);
+            opacity: 0;
+           
+        } 
+        #ninjas li.ng-enter.ng-active{
+            opacity: 1;
+            transform:translateY(0);
+       
+        }
+        .content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+          
+        }
+        .box{
+            border-radius: 10px;
+            border: 2px solid black;
+            padding:20px;
+            margin: 10px 0;
+            
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-direction: column;
+        }
+        
+        textarea{
+            border:2px solid black;
+            width:300px;
+            height:200px;
+            font-size:25px;
+            border-radius: 10px;
+
+        }
+        input.ng-touched.ng-invalid{
+            border:2px solid red;
+        }
+        #t.ng-touched.ng-invalid{
+            border:2px solid red;
+        }
+        input[disabled="disabled"]{
+            opacity: 0.9;
+            cursor: not-allowed;
+        }
+ #ninjas li.ng-leave{
+
+    transition:0.2s linear all;
+    transform:translateX(0);
+    } 
+    #ninjas li.ng-leave.ng-leave-active{
+ 
+    transform:translateX(-100%);
+    }
+#ninjas li.ng-leave-stagger{
+        transition-delay:0.2s;
+        transition-duration: 0;
+    }
+
+
+
+
+     @media screen and (max-width:560px){
+        .order{
+            margin:15px 5px;
+        }
+       a{
+        font-size:18px;
+       }}
+
+    </style>
+</head>
+<body >
+    <ng-include src=" 'header.html' "></ng-include>
+    <main ng-view>
+      
+       
+    </main>
+</body> 
+</html>
